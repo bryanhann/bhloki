@@ -1,4 +1,4 @@
 #!python
 import sys
 print('I AM PY-LOKI at',  __file__)
-print( 'executable: %s' % sys.executable )
+sys.stdout.write( 'executable: %s\n' % sys.executable )
