@@ -22,7 +22,7 @@ config = {
     'install_requires': [],
     'test_requires': ['mock', 'pytest'],
     'packages': ['src'],
-#    'scripts': ['bin/eg'],
+    'scripts': ['bin/loki'],
     'package_data': {
         'src': ['examples/*']
     },
