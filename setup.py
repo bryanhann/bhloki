@@ -11,7 +11,7 @@ LONG_DESCRIPTION = """ this is a long description"""
 # The version here must match the version in the code itself. Currently they
 # have to be updated in both places.
 config = {
-    'name': 'eg',
+    'name': 'loki',
     'description': 'Examples at the command line',
     'long_description': 'a long description',
     'author': 'largo',
