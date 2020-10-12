@@ -22,7 +22,7 @@ config = {
     'install_requires': [],
     'test_requires': ['mock', 'pytest'],
     'packages': ['eg'],
-    'scripts': ['bin/eg'],
+#    'scripts': ['bin/eg'],
     'package_data': {
         'eg': ['examples/*']
     },
