@@ -21,7 +21,7 @@ config = {
     'version': VERSION,
     'install_requires': [],
     'test_requires': ['mock', 'pytest'],
-    'packages': ['src'],
+    'packages': ['zap'],
     'scripts': ['bin/loki'],
     'package_data': {
         'src': ['examples/*']
