@@ -21,10 +21,10 @@ config = {
     'version': VERSION,
     'install_requires': [],
     'test_requires': ['mock', 'pytest'],
-    'packages': ['eg'],
+    'packages': ['src'],
 #    'scripts': ['bin/eg'],
     'package_data': {
-        'eg': ['examples/*']
+        'src': ['examples/*']
     },
     'zip_safe': False,
 }
