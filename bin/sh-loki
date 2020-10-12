@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "I AM SH-LOKI : [$0]"

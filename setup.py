@@ -22,7 +22,7 @@ config = {
     'install_requires': [],
     'test_requires': ['mock', 'pytest'],
     'packages': ['zap'],
-    'scripts': ['bin/loki'],
+    'scripts': ['bin/ur-loki', 'bin/py-loki', 'bin/sh-loki', ],
     'package_data': {
         'src': ['examples/*']
     },

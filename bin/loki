@@ -1,2 +1,0 @@
-echo "I AM BASH [$0]"
-print('I AM PYTHON %s' % __file__)
