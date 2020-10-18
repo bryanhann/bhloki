@@ -2,3 +2,4 @@ his
 mine
 .hide
 *.egg-info
+._venv

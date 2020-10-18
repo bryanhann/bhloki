@@ -1,2 +1,0 @@
-echo "I AM UR-LOKI : [$0]"
-print('I AM UR-LOKI : %s' % __file__)

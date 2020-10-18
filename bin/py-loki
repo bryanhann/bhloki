@@ -1,4 +1,0 @@
-#!python
-import sys
-print('I AM PY-LOKI at',  __file__)
-sys.stderr.write( 'executable: %s\n' % sys.executable )

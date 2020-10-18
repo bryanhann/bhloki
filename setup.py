@@ -3,30 +3,36 @@ try:
 except ImportError:
     from distutils.core import setup
 
-# Also bump at eg.eg_util.VERSION
-VERSION = '0.0.1'
+NAME                = 'loki'
+AUTHOR              = 'largo'
+AUTHOR_EMAIL        = 'largo@pobox.com'
+URL                 = 'https://github.com/sbryanhann/pippy'
+LICENSE             = 'MIT'
+ZIP_SAFE            =  False
+VERSION             = '0.0.1' # manually bump version numbering in code to match
+DESCRIPTION         = 'This is a one line description of the module.'
+LONG_DESCRIPTION    = """ This is a long description of the module.\nIt is usually in some markup format.  """.strip()
+SCRIPTS             = """ bin/loki.py bin/add.py bin/add.sh """.split()
+TEST_REQUIRES       = """ mock pytest       """.split()
+INSTALL_REQUIRES    = """ PyGithub==1.53  progress==1.5  """.split()
+PACKAGES            = """ loki     """.split()
 
-LONG_DESCRIPTION = """ this is a long description"""
+PACKAGE_DATA=dict()
+PACKAGE_DATA['src'] = """ examples.*  """.split()
 
-# The version here must match the version in the code itself. Currently they
-# have to be updated in both places.
-config = {
-    'name': 'loki',
-    'description': 'Examples at the command line',
-    'long_description': 'a long description',
-    'author': 'largo',
-    'url': 'https://github.com/sbryanhann/pippy',
-    'license': 'MIT',
-    'author_email': 'largo@pobox.com',
-    'version': VERSION,
-    'install_requires': [],
-    'test_requires': ['mock', 'pytest'],
-    'packages': ['zap'],
-    'scripts': ['bin/ur-loki', 'bin/py-loki', 'bin/sh-loki', ],
-    'package_data': {
-        'src': ['examples/*']
-    },
-    'zip_safe': False,
-}
-
-setup(**config)
+setup(
+    name                  = NAME
+    , description         = DESCRIPTION
+    , long_description    = LONG_DESCRIPTION
+    , author              = AUTHOR
+    , url                 = URL
+    , license             = LICENSE
+    , author_email        = AUTHOR_EMAIL
+    , version             = VERSION
+    , install_requires    = INSTALL_REQUIRES
+    , test_requires       = TEST_REQUIRES
+    , packages            = PACKAGES
+    , scripts             = SCRIPTS
+    , zip_safe            = ZIP_SAFE
+    , package_data        = PACKAGE_DATA
+)
