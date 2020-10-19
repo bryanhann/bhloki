@@ -3,3 +3,4 @@ mine
 .hide
 *.egg-info
 ._venv
+__pycache__
