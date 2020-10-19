@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-NAME                = 'loki'
+NAME                = 'pyloki'
 AUTHOR              = 'largo'
 AUTHOR_EMAIL        = 'largo@pobox.com'
 URL                 = 'https://github.com/sbryanhann/pippy'
@@ -15,7 +15,7 @@ LONG_DESCRIPTION    = """ This is a long description of the module.\nIt is usual
 SCRIPTS             = """ bin/loki.py bin/add.py bin/add.sh """.split()
 TEST_REQUIRES       = """ mock pytest       """.split()
 INSTALL_REQUIRES    = """ PyGithub==1.53  progress==1.5  """.split()
-PACKAGES            = """ loki     """.split()
+PACKAGES            = """ pyloki     """.split()
 
 PACKAGE_DATA=dict()
 PACKAGE_DATA['src'] = """ examples.*  """.split()
