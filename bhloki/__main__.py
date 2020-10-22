@@ -1,3 +1,3 @@
+import bhloki.cli
 if __name__ == '__main__':
-    import cli
-    cli.main()
+    bhloki.cli.main()
