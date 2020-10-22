@@ -1,12 +1,3 @@
-assert __name__ == '__main__'
-
-from pprint import pprint
-import argparse
-from bhloki.util import *
-from bhloki.constants import LOCAL, REMOTE
-
-def _hash():
-    return ARGS.hash or die( 5, 'need to supply --hash flag' )
 
 COMMANDS = {}
 def command(f):
@@ -74,11 +65,6 @@ def _list():
     printitems( _dict.items() )
 
 
-def cmd4name(name):
-    try:
-        return COMMANDS[name]
-    except KeyError:
-        die(11, "unrecognized: '%s'.  Try 'loki help'" )
 
 @command
 def help(subcommand=None):
@@ -93,22 +79,3 @@ def help(subcommand=None):
         for name, cmd in COMMANDS.items():
             doc = cmd.__doc__.split('\n')[0]
             print( '\t%s%s' % (name.ljust(10),doc) )
-def main():
-    name = ARGS.command[0]
-    args = ARGS.command[1:]
-    if not name in COMMANDS:
-        die (9,  'not recognized: "%s"' % name )
-    try:
-        COMMANDS[name](*args)
-    except UniqExc:
-        die(6, 'hash either overdetermined or underdermined the sha!')
-
-parser = argparse.ArgumentParser()
-parser.add_argument('command',nargs='+')
-parser.add_argument('--user', action='store', default='bryanhann')
-parser.add_argument('--hash', action='store', default='')
-parser.add_argument('--skipempty', action='store_true')
-parser.add_argument('--path', action='store')
-parser.add_argument('--name', action='store', default='')
-ARGS = args = parser.parse_args()
-main()
