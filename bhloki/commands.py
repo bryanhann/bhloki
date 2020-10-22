@@ -2,11 +2,14 @@
 
 from bhloki.util import *
 from bhloki.constants import *
-from bhloki._parser import ARGS
+from bhloki._parser import parser
 
 COMMANDS = dict()
 
 def main():
+    ARGS  = parser.parse_args()
+    ARGS.args = ARGS.command[1:] + ['']*5
+    ARGS.cmd = ARGS.command[0]
     # This function should be called by [bhloki.__main__]
     fn = COMMANDS.get(ARGS.cmd) or die(9,'unknown command: %s' % ARGS.cmd)
     try:
