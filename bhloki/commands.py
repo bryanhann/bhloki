@@ -3,7 +3,7 @@
 from bhloki.util import *
 from bhloki.constants import *
 from bhloki._parser import parser
-
+TAB = '    '
 COMMANDS = dict()
 
 def main():
@@ -24,7 +24,7 @@ def command(f):
 @command
 def rlist(ARGS=None):
     "list reverse dictionary items"
-    printitems(sorted(LOCAL.rdict().items()))
+    _pprint_items(sorted(LOCAL.rdict().items()))
 
 @command
 def _shas(ARGS=None):
@@ -79,8 +79,7 @@ def _list(ARGS=None):
         , kFilter    = prefix_test_4_prefix(ARGS.name)
         , vFilter    = fID if ARGS.skipempty else fTRUE
     )
-    printitems( _dict.items() )
-
+    _pprint_items( _dict.items() )
 
 
 @command
@@ -90,10 +89,26 @@ def help(ARGS=None,*subcommand):
     if not subcommand:
         print('loki subcommands')
         for name, cmd in COMMANDS.items():
-            doc = cmd.__doc__.split('\n')[0]
-            print( '\t%s%s' % (name.ljust(10),doc) )
+            print( TAB*2 + name.ljust(10) + TAB + shortdoc(cmd) )
     elif subcommand in COMMANDS:
         print(COMMANDS[subcommand].__doc__)
     else:
-        print('not found: %s' % subcommand)
-        exit(5)
+        die(5,"unknown subcommand: '%s'" % subcommand)
+
+
+# UI utilities:
+def shortdoc(cmd):
+    return cmd.__doc__.split('\n')[0]
+
+def die(err, msg=''):
+    msg = "[err:%s] loki: %s\n" % (err, msg)
+    sys.stderr.write(msg)
+    sys.stderr.flush()
+    exit(err)
+
+def _pprint_items(items):
+    for k,vals in items:
+        print(k)
+        for val in vals:
+            print('\t' + val)
+

@@ -27,18 +27,6 @@ def unique(oSeq):
     elif len(oList) < 1: raise UniqTooFew
     else: return oList[0]
 
-def die(errlevel, msg=''):
-    warn(msg)
-    exit(errlevel)
-def warn(x):
-    sys.stderr.write(str(x)+'\n')
-    sys.stderr.flush()
-def printitems(items):
-    for k,vals in items:
-        print(k)
-        for val in vals:
-            print('\t' + val)
-
 
 
 def _unzip2(pairs):
