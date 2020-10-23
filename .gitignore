@@ -1,6 +1,5 @@
-his
-mine
 .hide
 *.egg-info
+.test*
 ._venv
 __pycache__
