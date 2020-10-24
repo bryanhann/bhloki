@@ -1,0 +1,6 @@
+---[command]--------------------------------
+loki .test help _sha
+---[stdout]--------------------------------
+Return the unique sha with the hash prefix. Requres --hash
+
+---[stder]--------------------------------

@@ -1,0 +1,11 @@
+---[command]--------------------------------
+loki .test help update
+---[stdout]--------------------------------
+Update the cached dictionary from github
+
+    This is an interactive command that requires the user to supply credentials.
+
+    Note: The current cached directory will be overwritten.
+    
+
+---[stder]--------------------------------

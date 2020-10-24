@@ -1,0 +1,6 @@
+---[command]--------------------------------
+loki .test _sha --hash 3
+---[stdout]--------------------------------
+
+---[stder]--------------------------------
+[err:6] loki: hash either overdetermined or underdermined the sha!

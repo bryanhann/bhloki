@@ -1,0 +1,10 @@
+---[command]--------------------------------
+loki .test _list --hash 3
+---[stdout]--------------------------------
+.cache.bh.zjot
+	3a08ca9070b547bb5a95fa00ef01e1042f8e9a74
+.config.vim
+.local.bin
+	3ae55c47c8c98a3bf2d148b4471ee40d6f7d79b9
+
+---[stder]--------------------------------

@@ -1,0 +1,6 @@
+---[command]--------------------------------
+loki .test help rlist
+---[stdout]--------------------------------
+list reverse dictionary items
+
+---[stder]--------------------------------

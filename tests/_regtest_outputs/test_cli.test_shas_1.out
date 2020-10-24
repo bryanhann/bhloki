@@ -1,0 +1,12 @@
+---[command]--------------------------------
+loki .test _shas 
+---[stdout]--------------------------------
+0e9e1d7d1318cdb2fe0c199ab7b6579ac12c64e3
+3a08ca9070b547bb5a95fa00ef01e1042f8e9a74
+3ae55c47c8c98a3bf2d148b4471ee40d6f7d79b9
+68c82e6fb55c2f6b1acbaf1813d060b70718f9ae
+8f36dfac6502fe8422feb4fe0487ef5385038b34
+f3444a8f2568359ce42c1beb034597c0fc661972
+fcd634f47181a2ce7aa66a74cae6f8f5774391c4
+
+---[stder]--------------------------------

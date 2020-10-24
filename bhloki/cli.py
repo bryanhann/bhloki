@@ -1,5 +1,5 @@
 # This module should be imported by [bhloki.__main__]
-
+from pprint import pprint
 from bhloki.util import *
 from bhloki.constants import *
 from bhloki._parser import parser
@@ -29,18 +29,18 @@ def rlist(ARGS=None):
 @command
 def _shas(ARGS=None):
     "List all shas with the hash prefix. Requires --hash"
-    for sha in sorted(LOCAL.shas4hash(_hash())):
+    for sha in sorted(LOCAL.shas4hash(ARGS.hash)):
         print(sha)
 
 @command
 def _sha(ARGS=None):
     "Return the unique sha with the hash prefix. Requres --hash"
-    pprint(LOCAL.sha4hash(_hash()))
+    print( LOCAL.sha4hash(ARGS.hash))
 
 @command
 def find(ARGS=None):
     "List the names for the given hash. Requires --hash"
-    for name in LOCAL.names4sha(_hash()):
+    for name in LOCAL.names4sha(ARGS.hash):
         print(name)
 
 @command
