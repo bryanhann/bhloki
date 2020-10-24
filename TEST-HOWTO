@@ -1,0 +1,12 @@
+Test the package by running the following command:
+
+    ./with-venv [-n] [-i] pytest [pytest-args]
+    
+This will run 'pytest [pytest-args]' in a local virtual environment.
+
+OPTIONS:
+        -n  : force creation of a new env, overwriting any old
+        -i  : install local package first via 'pip install -e .'
+
+Source the ./aliases.sh file (from within the root folder!) for convenience aliases and functions.
+

@@ -1,0 +1,37 @@
+#!/bin/bash
+[ -z $1 ] && { 
+    cat $(dirname $0)/TEST-HOWTO; 
+    exit; 
+}
+
+[ -z $WLROOT ] && {
+    o="${PWD}"
+    cd $(dirname "${0}")
+    export WLROOT="${PWD}"
+    cd "${o}"
+    export wl=${WLROOT}/wl
+}
+
+VENV=${WLROOT}/.withlocal.venv
+
+if [ "$1" = "-n"   ]; then
+    shift
+    rm -rf $VENV
+fi
+
+if [ -d $VENV ]; then
+    source $VENV/bin/activate
+else
+    python3 -m venv $VENV
+    source $VENV/bin/activate
+    pip install --upgrade pip
+fi
+
+if [ "$1" = "-i"   ]; then
+    shift
+    pip install -e ${WLROOT}
+fi
+
+$*
+
+rm -rf ${WLROOT}/*.egg-info
