@@ -12,7 +12,7 @@ clean () {
 }
 
 
-_alias wl   $PWD/wl
-_alias ti   $PWD/wl -i pytest
-_alias tn   $PWD/wl -n
+_alias wl   $PWD/with-venv
+_alias ti   $PWD/with-venv -i pytest
+_alias tn   $PWD/with-venv -n
 
