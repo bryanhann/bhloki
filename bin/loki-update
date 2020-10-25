@@ -1,0 +1,26 @@
+#!/bin/bash
+URL=https://github.com/bryanhann/__index__
+REPO=$HOME/.cache/loki/path/to/__INDEX__.repo
+DICT=$REPO/the_dict
+
+[ "${1}" == "--fresh" ] && {
+    echo Directory ${1} will be removed
+    echo press enter three times to continue...
+    shift; read; read; read; rm -rf ${1}
+}
+
+[ -d $REPO  ] || git clone $URL $REPO
+
+pushd $REPO > /dev/null
+
+git pull
+
+python -m bhloki.api update --path $DICT && {
+#simple update --path $DICT && {
+    echo changed
+    git add .
+    git commit -m "Routine update"
+    git push
+}
+
+popd > /dev/null

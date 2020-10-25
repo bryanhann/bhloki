@@ -1,0 +1,12 @@
+#!/bin/bash
+
+URL=https://github.com/bryanhann/__index__
+REPO=$HOME/.cache/loki/path/to/__INDEX__.repo
+DICT=$REPO/the_dict
+
+[ -d $REPO  ] || git clone $URL $REPO >&2
+pushd $REPO > /dev/null
+git pull >&2
+popd > /dev/null
+
+python -m bhloki.api --path $DICT url4sha $*
