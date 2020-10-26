@@ -1,0 +1,4 @@
+#!/bin/bash
+export URL=https://github.com/bryanhann/__index__
+export REPO=$HOME/.cache/loki/path/to/__INDEX__.repo
+export DICT=$REPO/the_dict
