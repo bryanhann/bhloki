@@ -12,7 +12,7 @@ ZIP_SAFE            =  False
 VERSION             = '0.0.1' # manually bump version numbering in code to match
 DESCRIPTION         = 'This is a one line description of the module.'
 LONG_DESCRIPTION    = """ This is a long description of the module.\nIt is usually in some markup format.  """.strip()
-SCRIPTS             = """ bin/loki bin/add.py bin/add.sh bin/loki-update bin/loki-url4sha """.split()
+SCRIPTS             = """ bin/loki bin/add.py bin/add.sh bin/loki-update bin/loki-lookup """.split()
 TEST_REQUIRES       = """ mock==4.0.2 pytest==6.1.1 pytest-regtest==1.4.5""".split()
 INSTALL_REQUIRES    = """ PyGithub==1.53  progress==1.5""".split()
 PACKAGES            = """ bhloki     """.split()
