@@ -16,6 +16,9 @@ ARGS = parser.parse_args()
 from github import Github, GithubException
 import github
 
+TEST_MAX=os.environ.get('loki_test_max')
+TEST_MAX=TEST_MAX and int(TEST_MAX)
+
 def err(x): sys.stderr.write(x+'\n'); sys.stderr.flush()
 def out(x): sys.stdout.write(x+'\n'); sys.stdout.flush()
 def url4name(name): return 'https://github.com/bryanhann/%s' % name
@@ -50,7 +53,9 @@ def acquire():
     user = hub.get_user()
     repos = user.get_repos()
     acc = dict()
-    for repo in repos[52:56]:
+    if TEST_MAX:
+        repos = repos[:TEST_MAX]
+    for repo in repos:
         err( repo.name )
         acc[ repo.name ] = []
         for commit in commits4repo(repo):
