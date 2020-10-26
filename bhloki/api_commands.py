@@ -38,7 +38,6 @@ def cmd_url4sha(ARGS):
             if sha.startswith(sha_prefix):
                 print(GITHUB_PREFIX + '/' + name)
                 exit()
-            err(sha)
     die(1,'not found')
 
 def parse():

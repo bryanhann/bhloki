@@ -2,7 +2,7 @@ import os
 import argparse
 import bhloki.api_commands as commands
 import bhloki.api_constants as CC
-
+from bhloki.api_util import die
 parser = argparse.ArgumentParser()
 parser.add_argument('args',nargs='+')
 parser.add_argument('--user', action='store', default=CC.GITHUB_USERNAME)

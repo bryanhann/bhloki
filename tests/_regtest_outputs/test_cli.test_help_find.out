@@ -1,6 +1,0 @@
----[command]--------------------------------
-loki .test help find
----[stdout]--------------------------------
-List the names for the given hash. Requires --hash
-
----[stder]--------------------------------

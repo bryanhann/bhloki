@@ -1,7 +1,0 @@
----[command]--------------------------------
-loki .test _list --hash 3 --name .c --skipempty
----[stdout]--------------------------------
-.cache.bh.zjot
-	3a08ca9070b547bb5a95fa00ef01e1042f8e9a74
-
----[stder]--------------------------------

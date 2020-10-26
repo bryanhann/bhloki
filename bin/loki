@@ -1,3 +1,0 @@
-#!/bin/bash
-[ "${1}" == ".test" ] && shift && export loki_test=1
-python -m bhloki $*

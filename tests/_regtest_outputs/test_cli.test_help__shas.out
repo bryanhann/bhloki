@@ -1,6 +1,0 @@
----[command]--------------------------------
-loki .test help _shas
----[stdout]--------------------------------
-List all shas with the hash prefix. Requires --hash
-
----[stder]--------------------------------

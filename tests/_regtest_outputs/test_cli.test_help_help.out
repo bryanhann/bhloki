@@ -1,6 +1,0 @@
----[command]--------------------------------
-loki .test help help
----[stdout]--------------------------------
-print help. For help on a subcomand use 'help subcommand'
-
----[stder]--------------------------------
