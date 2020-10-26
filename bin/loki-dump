@@ -1,0 +1,7 @@
+#!/bin/bash
+
+URL=https://github.com/bryanhann/__index__
+REPO=$HOME/.cache/loki/path/to/__INDEX__.repo
+DICT=$REPO/the_dict
+
+python -m bhloki.api --path $DICT dump

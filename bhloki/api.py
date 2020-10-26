@@ -57,6 +57,14 @@ def acquire():
             acc[repo.name].append(commit.sha)
     return OrderedDict( sorted( acc.items() ) )
 
+def cmd_dump(ARGS):
+    old = pickle_read(ARGS.path)
+    for k,vv in old.items():
+        print(k)
+        for v in vv:
+            print('    ' + v)
+
+
 def cmd_update(ARGS):
     DICTPATH=ARGS.path
     err( 'DICTPATH: ' + DICTPATH )
