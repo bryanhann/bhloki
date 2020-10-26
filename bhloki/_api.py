@@ -13,13 +13,11 @@ parser.add_argument('--skipempty', action='store_true')
 parser.add_argument('--name', action='store', default='')
 ARGS = parser.parse_args()
 
-from github import Github, GithubException
-import github
-
-EXCLUDE_LIST=[ '__index__' ]
-
 TEST_MAX=os.environ.get('loki_test_max')
 TEST_MAX=TEST_MAX and int(TEST_MAX)
+
+from github import Github, GithubException
+import github
 
 def err(x): sys.stderr.write(x+'\n'); sys.stderr.flush()
 def out(x): sys.stdout.write(x+'\n'); sys.stdout.flush()
@@ -42,6 +40,14 @@ def pickle_read(path):
             return pickle.load(fd)
     except FileNotFoundError:
         return None
+
+def sorted4repos(repos):
+    def ddunder(s): return s.startswith('__') and s.endswith('__')
+    repos = list(repos)
+    dunders = [repo for repo in repos if     ddunder(repo.name)]
+    others  = [repo for repo in repos if not ddunder(repo.name)]
+    return dunders + others
+
 def commits4repo(repo):
     try: return list(repo.get_commits())
     except GithubException: return list()
@@ -53,11 +59,10 @@ def acquire():
     hub = Github( username, password )
     err('done')
     user = hub.get_user()
-    repos = list(user.get_repos())
-    repos = [repo for repo in repos if not repo.name in EXCLUDE_LIST ]
-    acc = dict()
+    repos = sorted4repos( user.get_repos() )
     if TEST_MAX:
         repos = repos[:TEST_MAX]
+    acc = dict()
     for repo in repos:
         err( repo.name )
         acc[ repo.name ] = []
@@ -71,7 +76,6 @@ def cmd_dump(ARGS):
         print(k)
         for v in vv:
             print('    ' + v)
-
 
 def cmd_update(ARGS):
     DICTPATH=ARGS.path
