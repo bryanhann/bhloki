@@ -1,8 +1,4 @@
 #!/bin/bash
 source loki-constants
-[ -d $REPO  ] || git clone $URL $REPO >&2
-pushd $REPO > /dev/null
-git pull >&2
-popd > /dev/null
-
+loki_clone --pull $*
 python -m bhloki.api --path $DICT url4sha $*

@@ -1,0 +1,17 @@
+#!/bin/bash
+source loki-constants
+[ "${1}" == "--fresh" ] && {
+    shift
+    echo Directory ${REPO} will be removed
+    echo press enter three times to continue...
+    read; read; read; rm -rf ${REPO}
+}
+
+[ -d $REPO  ] || git clone $URL $REPO >&2
+
+[ "${1}" == "--pull" ] && { 
+    shift
+    pushd $REPO > /dev/null; 
+    git pull >&2; 
+    popd > /dev/null; 
+}

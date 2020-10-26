@@ -50,7 +50,7 @@ def acquire():
     user = hub.get_user()
     repos = user.get_repos()
     acc = dict()
-    for repo in repos[52:57]:
+    for repo in repos[52:56]:
         err( repo.name )
         acc[ repo.name ] = []
         for commit in commits4repo(repo):
