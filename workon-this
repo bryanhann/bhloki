@@ -1,0 +1,36 @@
+#!/bin/sh
+
+printf '\nAre you sure? This will change your environment!\n'
+printf 'Best practice is to do this in a subshell!\n\n'
+printf 'Press [enter] to continue.\n'
+printf 'Press [CTRL-c] to abort.\n'
+read
+
+note () { printf "######## $1\n"; sleep .3; }
+
+VENV=${PWD}/.test_venv
+note 'removing old virtual environment'
+rm -rf ${VENV}
+note 'installing new virtual environment'
+python3 -m venv $VENV
+
+note 'activating environment'
+source $VENV/bin/activate
+
+note 'upgrading pip'
+pip install --upgrade pip
+
+note 'installing local package'
+pip install -e .
+
+note 'cleaning up'
+rm -rf ./*.egg-info
+
+note 'running test'
+pytest
+
+echo
+echo 'environment is ready'
+echo
+
+

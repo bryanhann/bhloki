@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION             = '0.0.1' # manually bump version numbering in code to match
+VERSION             = '0.0.2' # manually bump version numbering in code to match
 ZIP_SAFE            =  False
 NAME                = 'pyloki'
 AUTHOR              = 'largo'
