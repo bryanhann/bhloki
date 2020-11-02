@@ -3,7 +3,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION             = '0.0.2' # manually bump version numbering in code to match
+VERSION             = '0.0.3' # manually bump version numbering in code to match
 ZIP_SAFE            =  False
 NAME                = 'pyloki'
 AUTHOR              = 'largo'
@@ -23,6 +23,7 @@ SCRIPTS = """
     bin/loki-dump
     bin/loki-constants
     bin/loki_clone
+    bin/loki
     """.split()
 
 TEST_REQUIRES  = """

@@ -1,0 +1,24 @@
+#!/bin/sh
+cat <<HERE
+
+LOKI - Find repos at [https://github.com/bryanhann/*] by commit id.
+
+COMMANDS:
+
+    loki-update
+
+        Create/Update a local database. 
+        Requires credentials for [https://github.com/bryanhann].
+
+    loki-dump
+
+        Dump the local database to stdout.
+
+    loki-lookup PREFIX
+
+        Consult the local database to return a url of a git repo with a commit 
+        whose prefix begins with PREFIX. The argument PREFIX must be at least
+        five characters in lengthi. Lowercase is expected.
+
+HERE
+
